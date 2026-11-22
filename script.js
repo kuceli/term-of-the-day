@@ -1,5 +1,5 @@
 const SHEET_URL =
-  "https://docs.google.com/spreadsheets/d/1L-CT_YkWqO3UXhFxRcniab0QBfTTQlo3RRzeQd8x6Rk/gviz/tq?tqx=out:json";
+  "https://docs.google.com/spreadsheets/d/1Wv4bkxWZBa-ZZkpoJCm1ucxzCiBvU4svZiDhrno4RLA/gviz/tq?tqx=out:json";
 
 async function loadFacts() {
   try {
