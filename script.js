@@ -20,7 +20,7 @@ async function loadFacts() {
       const content = row.c[3]?.v;
 
       if (date) {
-        facts[date] = { title, year, content };
+        facts[date] = { title, content };
       }
     });
 
@@ -41,12 +41,12 @@ function displayFact(facts) {
   const fact = facts[key];
 
   const titleEl = document.getElementById("tdic-title");
-  const dateEl = document.getElementById("tdic-date");
+  // const dateEl = document.getElementById("tdic-date");
   const contentEl = document.getElementById("tdic-content");
 
   if (fact) {
     titleEl.textContent = fact.title;
-    dateEl.textContent = `${mm}/${dd}${fact.year ? " • " + fact.year : ""}`;
+    // dateEl.textContent = `${mm}/${dd}${fact.year ? " • " + fact.year : ""}`;
     contentEl.textContent = fact.content;
   } else {
     titleEl.textContent = "On this day in corruption history,";
