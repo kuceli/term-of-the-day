@@ -20,7 +20,7 @@ async function loadFacts() {
       const content = row.c[3]?.v;
 
       if (date) {
-        facts[date] = { title, content };
+        facts[date] = { title, date, content };
       }
     });
 
