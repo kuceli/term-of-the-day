@@ -1,6 +1,7 @@
 const SHEET_URL =
   "https://docs.google.com/spreadsheets/d/1Wv4bkxWZBa-ZZkpoJCm1ucxzCiBvU4svZiDhrno4RLA/gviz/tq?tqx=out:json";
 
+
 async function loadFacts() {
   try {
     const response = await fetch(SHEET_URL);
@@ -20,7 +21,7 @@ async function loadFacts() {
       const content = row.c[3]?.v;
 
       if (date) {
-        facts[date] = { title, date, content };
+        facts[date] = { title, year, content };
       }
     });
 
@@ -41,12 +42,12 @@ function displayFact(facts) {
   const fact = facts[key];
 
   const titleEl = document.getElementById("tdic-title");
-  // const dateEl = document.getElementById("tdic-date");
+  const dateEl = document.getElementById("tdic-date");
   const contentEl = document.getElementById("tdic-content");
 
   if (fact) {
     titleEl.textContent = fact.title;
-    // dateEl.textContent = `${mm}/${dd}${fact.year ? " • " + fact.year : ""}`;
+    dateEl.textContent = `${mm}/${dd}${fact.year ? " • " + fact.year : ""}`;
     contentEl.textContent = fact.content;
   } else {
     titleEl.textContent = "On this day in corruption history,";
